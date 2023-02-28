@@ -2,7 +2,7 @@ import Title from "../../components/Title";
 
 const Why = () => {
   return (
-    <div className="wrapper mt-[100px] bg-whyBg bg-contain bg-left-top relative isolate">
+    <div className="wrapper mt-[80px] sm:mt-[100px] bg-whyBg bg-contain bg-left-top relative isolate">
       <img
         src="/why-line.png"
         className="absolute top-0 md:block hidden left-0 w-full max-w-[977px] -z-10"

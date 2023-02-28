@@ -14,6 +14,8 @@ module.exports = {
         whyBg: "url('/bg-why.png')",
         headerBg: "linear-gradient(180deg, #151515 27.62%, #1A1C1F 100%)",
         goldGr: "linear-gradient(94.02deg, #FFC300 8.31%, #FF9A00 95.06%)",
+        borderWhite:
+          "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 52.08%, rgba(255, 255, 255, 0) 100%)",
       },
       colors: {
         jungleGreen: "#222528",

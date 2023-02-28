@@ -36,19 +36,21 @@ const Hero = () => {
         <div className="relative isolate w-full max-w-[440px]">
           <div className="flex justify-start pb-5 heroBorder items-start w-full gap-4 flex-col bg-[#D9D9D91A] backdrop-blur-[30px]  rounded-[15px] p-4">
             <img
-              src="/hero-card.png"
-              className="w-full object-contain"
+              src="/hero-card.gif"
+              className="w-full rounded-[15px] object-contain"
               alt=""
             />
             <div className="flex justify-between items-center w-full">
-              <h4 className="text-white text-sm sm:text-xl font-normal">
-                Otherdeed for Otherside
-              </h4>
-              <img
-                src="/verified.png"
-                className="w-4 sm:w-[18px] object-contain"
-                alt=""
-              />
+              <div className="flex justify-start items-center gap-2">
+                <h4 className="text-white text-sm sm:text-xl font-normal">
+                  Bad Ape Girls Club
+                </h4>
+                <img
+                  src="/verified.png"
+                  className="w-4 sm:w-[18px] object-contain"
+                  alt=""
+                />
+              </div>
               <p className="grText text-xs sm:text-sm">(Coming Soon)</p>
             </div>
           </div>
