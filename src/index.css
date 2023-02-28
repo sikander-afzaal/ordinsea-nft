@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@font-face {
+  font-family: "Avenor";
+  src: url("/fonts/avenir_roman_12.woff");
+  font-weight: 400;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .wrapper {
+    @apply w-full flex justify-start items-center flex-col;
+  }
+  .contain {
+    @apply flex w-[90%] max-w-[1300px];
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #1a1c1f;
+}
+.grText {
+  background: linear-gradient(94.02deg, #ffc300 8.31%, #ff9a00 95.06%),
+    linear-gradient(84.74deg, #0057ff -15.26%, #d81ffa 115.21%), #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.heroBorder {
+  background-image: radial-gradient(
+      circle at 100% 100%,
+      transparent 17px,
+      #ffc300 17px,
+      #ffc300 19px,
+      transparent 19px
+    ),
+    linear-gradient(to right, #ffc300, #ff9a00),
+    radial-gradient(
+      circle at 0% 100%,
+      transparent 17px,
+      #ff9a00 17px,
+      #ff9a00 19px,
+      transparent 19px
+    ),
+    linear-gradient(to bottom, #ff9a00, #ff9a00),
+    radial-gradient(
+      circle at 0% 0%,
+      transparent 17px,
+      #ff9a00 17px,
+      #ff9a00 19px,
+      transparent 19px
+    ),
+    linear-gradient(to left, #ff9a00, #ffd600),
+    radial-gradient(
+      circle at 100% 0%,
+      transparent 17px,
+      #ffd600 17px,
+      #ffd600 19px,
+      transparent 19px
+    ),
+    linear-gradient(to top, #ffd600, #ffc300);
+  background-size: 19px 19px, calc(100% - 38px) 2px, 19px 19px,
+    2px calc(100% - 38px);
+  background-position: top left, top center, top right, center right,
+    bottom right, bottom center, bottom left, center left;
+  background-repeat: no-repeat;
+}
