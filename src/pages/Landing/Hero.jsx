@@ -18,15 +18,19 @@ const Hero = () => {
           <h2 className="grText leading-[1.5] font-avenor text-[30px] sm:text-[45px] xl:text-[65px] font-normal">
             INSCRIBE, BUY & SELL ORDINALS
           </h2>
-          <p className="text-base xl:text-xl font-normal text-white">
+          <p className="text-base xl:text-xl font-normal text-black dark:text-white">
             Trustless & Secure Ordinal Marketplace Built on Bitcoin
           </p>
           <div className="flex justify-center lg:justify-start items-center gap-5 w-full">
             <GradientButton
+              tooltip
+              direction="up"
               text="Explore Collections"
               classes="max-w-[200px] w-full xl:max-w-[245px] h-[55px] xl:h-[72px] min-h-[53px]"
             />
             <GradientButton
+              tooltip
+              direction="up"
               text="Sell Ordinals"
               inverse
               classes="max-w-[200px] w-full xl:max-w-[245px] h-[55px] xl:h-[72px] min-h-[53px]"
@@ -42,7 +46,7 @@ const Hero = () => {
             />
             <div className="flex justify-between items-center w-full">
               <div className="flex justify-start items-center gap-2">
-                <h4 className="text-white text-sm sm:text-xl font-normal">
+                <h4 className="text-black dark:text-white text-sm sm:text-xl font-normal">
                   Bad Ape Girls Club
                 </h4>
                 <img

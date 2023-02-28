@@ -71,12 +71,18 @@ const FeaturedCollectionBox = ({ img, title, items, volume }) => {
       </svg>
 
       <div className="flex justify-between items-center gap-2 w-full">
-        <p className="text-white text-[22px] font-medium ">{title}</p>
-        <p className="text-white  font-medium ">{items} Items</p>
+        <p className="text-black dark:text-white text-[22px] font-medium ">
+          {title}
+        </p>
+        <p className="text-black dark:text-white  font-medium ">
+          {items} Items
+        </p>
       </div>
       <div className="flex justify-between items-center gap-2 w-full">
-        <p className="text-white text-[22px] font-medium ">Total Volume</p>
-        <p className="text-white  font-medium ">{volume}</p>
+        <p className="text-black dark:text-white text-[22px] font-medium ">
+          Total Volume
+        </p>
+        <p className="text-black dark:text-white  font-medium ">{volume}</p>
       </div>
     </div>
   );

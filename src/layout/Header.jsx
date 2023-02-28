@@ -1,10 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import GradientButton from "../components/GradientButton";
+import ToolTip from "../components/ToolTip";
 
 const Header = () => {
   const [headerToggle, setHeaderToggle] = useState(false);
+  const [darkMode, setDarkMode] = useState("");
+  useEffect(() => {
+    if (!localStorage.theme) {
+      localStorage.setItem("theme", "dark");
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.add(localStorage.theme);
+      setDarkMode(localStorage.theme);
+    }
+  }, []);
+
   return (
-    <header className=" bg-headerBg border-b border-solid border-gray wrapper fixed top-0 left-0 z-[50]">
+    <header className=" bg-white dark:bg-headerBg border-b border-solid border-gray wrapper fixed top-0 left-0 z-[50]">
       {headerToggle && (
         <div
           onClick={() => setHeaderToggle(false)}
@@ -13,11 +25,15 @@ const Header = () => {
       )}
       <div className="contain h-[93px]  justify-between items-center">
         <div className="flex justify-start items-center gap-6">
-          <img src="/logo.png" className="w-[148px] object-contain" alt="" />
+          <img
+            src="/logo.png"
+            className="dark:brightness-100 brightness-0 w-[148px] object-contain"
+            alt=""
+          />
           <input
             type="text"
             placeholder="Search Collections, NFT, Users... "
-            className="text-white text-[13px] xl:block hidden font-light w-[240px] mid:w-[300px] h-[47px] bg-jungleGreen rounded-full border-none outline-none pl-5"
+            className="text-black dark:text-white text-[13px] xl:block hidden font-light w-[240px] mid:w-[300px] h-[47px] bg-white  dark:bg-jungleGreen rounded-full border border-solid border-jungleGreen outline-none pl-5"
           />
         </div>
         <nav
@@ -25,35 +41,81 @@ const Header = () => {
             headerToggle ? "right-0" : "-right-[900px]"
           } fixed lg:static top-0 lg:flex-row flex-col w-full lg:w-auto max-w-[450px] lg:max-w-none pt-[6rem] px-[3rem] pb-5 lg:p-0 bg-jungleGreen border-l border-solid border-gray lg:border-none lg:bg-transparent h-full lg:h-auto  z-[90] transition-all duration-1000`}
         >
-          <a href="#" className="text-white text-base">
+          <a
+            href="#"
+            className="text-black dark:text-white text-base relative group"
+          >
+            <ToolTip direction="bottom" />
             Collections
           </a>
-          <a href="#" className="text-white text-base">
+          <a
+            href="#"
+            className="text-black dark:text-white text-base relative group"
+          >
+            <ToolTip direction="bottom" />
             Sell
           </a>
-          <a href="#" className="text-white text-base">
+          <a
+            href="#"
+            className="text-black dark:text-white text-base relative group"
+          >
+            <ToolTip direction="bottom" />
             Explore
           </a>
-          <button className="bg-transparent relative min-w-[42px] aspect-square rounded-full isolate">
-            <div className="rounded-full w-full h-full relative z-20 bg-jungleGreen grid place-items-center text-white">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
-                />
-              </svg>
+          <button
+            onClick={() => {
+              if (darkMode === "dark") {
+                document.documentElement.classList.add("light");
+                document.documentElement.classList.remove("dark");
+                localStorage.theme = "light";
+                setDarkMode("light");
+              } else {
+                document.documentElement.classList.remove("light");
+                document.documentElement.classList.add("dark");
+                localStorage.theme = "dark";
+                setDarkMode("dark");
+              }
+            }}
+            className="bg-transparent cursor-pointer relative min-w-[42px] aspect-square rounded-full isolate"
+          >
+            <div className="rounded-full w-full h-full relative z-20 bg-white dark:bg-jungleGreen grid place-items-center text-black dark:text-white">
+              {darkMode === "dark" ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-5 h-5 pointer-events-none"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-5 h-5 pointer-events-none"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+                  />
+                </svg>
+              )}
             </div>
             <div className="absolute rounded-full bg-goldGr -inset-[1px] -z-10"></div>
           </button>
           <GradientButton
+            tooltip
+            direction={"bottom"}
             text="Buy $OSEA"
             ico={
               <svg
@@ -75,10 +137,12 @@ const Header = () => {
           />
 
           <GradientButton
+            tooltip
+            direction={"bottom"}
             ico={
               <img
                 src="/wallet-ico.png"
-                className="w-5 object-contain"
+                className="w-5 object-contain dark:brightness-100 brightness-0"
                 alt=""
               />
             }

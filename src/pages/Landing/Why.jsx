@@ -45,10 +45,10 @@ const WhyBox = ({ ico, title, desc }) => {
       <div className="rounded-full aspect-square bg-goldGr w-[90px] grid place-items-center">
         <img src={ico} className="h-[36px] object-contain" alt="" />
       </div>
-      <h4 className="text-white font-medium text-2xl 2xl:text-[27px]">
+      <h4 className="text-black dark:text-white font-medium text-2xl 2xl:text-[27px]">
         {title}
       </h4>
-      <p className="text-white">{desc}</p>
+      <p className="text-black dark:text-white">{desc}</p>
     </div>
   );
 };

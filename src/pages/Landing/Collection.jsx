@@ -103,7 +103,9 @@ const CollectionBox = ({ num, img, title, floor, price, volume, percent }) => {
   return (
     <div className="flex justify-start items-center gap-2 2xl:gap-5 w-full">
       <div className="flex justify-start items-center gap-1">
-        <h5 className="text-white text-[30px] font-avenor">{num}</h5>
+        <h5 className="text-black dark:text-white text-[30px] font-avenor">
+          {num}
+        </h5>
         <img
           src={img}
           className="min-w-[93px] aspect-square object-contain"
@@ -111,17 +113,19 @@ const CollectionBox = ({ num, img, title, floor, price, volume, percent }) => {
         />
       </div>
       <div className="flex justify-start w-full items-start flex-col gap-2">
-        <p className="text-white text-lg mb-1 font-medium">{title}</p>
+        <p className="text-black dark:text-white text-lg mb-1 font-medium">
+          {title}
+        </p>
         <div className="flex justify-between items-center gap-1 w-full">
-          <p className="text-white font-light">
+          <p className="text-black dark:text-white font-light">
             Floor: <span className="text-[#189FFF] font-normal">{floor}</span>
           </p>
-          <p className="text-white font-light">
+          <p className="text-black dark:text-white font-light">
             Price: <span className="text-[#189FFF] font-normal">{price}</span>
           </p>
         </div>
         <div className="flex justify-between items-center gap-1 w-full">
-          <p className="text-white font-light">
+          <p className="text-black dark:text-white font-light">
             Volume: <span className="text-[#189FFF] font-normal">{volume}</span>
           </p>
           <p className="text-[#28C51A] font-medium">{percent}%</p>
