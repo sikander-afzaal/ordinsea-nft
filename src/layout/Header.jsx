@@ -1,4 +1,5 @@
 import { useState } from "react";
+import GradientButton from "../components/GradientButton";
 
 const Header = () => {
   const [headerToggle, setHeaderToggle] = useState(false);
@@ -52,8 +53,9 @@ const Header = () => {
             </div>
             <div className="absolute rounded-full bg-goldGr -inset-[1px] -z-10"></div>
           </button>
-          <button className="bg-transparent relative w-[191px] h-[53px] min-h-[53px] group rounded-full isolate">
-            <div className="flex justify-center items-center w-full bg-transparent transition-all duration-200 group-hover:bg-jungleGreen text-white gap-1 h-full rounded-full">
+          <GradientButton
+            text="Buy $OSEA"
+            ico={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -67,21 +69,24 @@ const Header = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              <p>Buy $OSEA</p>
-            </div>
-            <div className="absolute rounded-full bg-goldGr -inset-[2px] transition-all duration-200 -z-10"></div>
-          </button>
-          <button className="bg-transparent relative w-[191px] h-[53px] min-h-[53px] group rounded-full isolate">
-            <div className="flex justify-center items-center w-full bg-jungleGreen transition-all duration-200 group-hover:bg-transparent text-white gap-2 h-full rounded-full">
+            }
+            classes="w-[191px] h-[53px] min-h-[53px]"
+            textSmall
+          />
+
+          <GradientButton
+            ico={
               <img
                 src="/wallet-ico.png"
                 className="w-5 object-contain"
                 alt=""
               />
-              <p>Connect Wallet</p>
-            </div>
-            <div className="absolute rounded-full bg-goldGr  -inset-[2px] transition-all duration-200 -z-10"></div>
-          </button>
+            }
+            classes="w-[191px] h-[53px] min-h-[53px]"
+            text="Connect Wallet"
+            inverse
+            textSmall
+          />
         </nav>
         {headerToggle ? (
           <svg

@@ -1,3 +1,5 @@
+import GradientButton from "../../components/GradientButton";
+
 const Hero = () => {
   return (
     <div className="bg-heroBg bg-cover bg-left pb-[120px] pt-[170px] lg:pt-[220px] flex justify-center items-center w-full relative ">
@@ -20,20 +22,15 @@ const Hero = () => {
             Trustless & Secure Ordinal Marketplace Built on Bitcoin
           </p>
           <div className="flex justify-center lg:justify-start items-center gap-5 w-full">
-            <button className="bg-transparent relative w-full max-w-[200px] xl:max-w-[245px] h-[55px] xl:h-[72px] min-h-[53px] group rounded-full isolate">
-              <div className="flex justify-center items-center w-full bg-transparent transition-all duration-200 group-hover:bg-jungleGreen text-white gap-1 h-full rounded-full">
-                <p className="text-sm sm:text-base xl:text-xl">
-                  Explore Collections
-                </p>
-              </div>
-              <div className="absolute rounded-full bg-goldGr -inset-[2px] transition-all duration-200 -z-10"></div>
-            </button>
-            <button className="bg-transparent relative w-full max-w-[200px] xl:max-w-[245px] h-[55px] xl:h-[72px] min-h-[53px] group rounded-full isolate">
-              <div className="flex justify-center items-center w-full bg-jungleGreen transition-all duration-200 group-hover:bg-transparent text-white gap-2 h-full rounded-full">
-                <p className="text-sm sm:text-base xl:text-xl">Sell Ordinals</p>
-              </div>
-              <div className="absolute rounded-full bg-goldGr  -inset-[2px] transition-all duration-200 -z-10"></div>
-            </button>
+            <GradientButton
+              text="Explore Collections"
+              classes="max-w-[200px] w-full xl:max-w-[245px] h-[55px] xl:h-[72px] min-h-[53px]"
+            />
+            <GradientButton
+              text="Sell Ordinals"
+              inverse
+              classes="max-w-[200px] w-full xl:max-w-[245px] h-[55px] xl:h-[72px] min-h-[53px]"
+            />
           </div>
         </div>
         <div className="relative isolate w-full max-w-[440px]">
